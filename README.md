@@ -1,4 +1,1 @@
-bode
-====
-
-bode code
+Visit reibot.org for full guide
