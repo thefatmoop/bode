@@ -19,8 +19,6 @@ void setup() {
   Serial.begin(57600);
   delay(1000);
   Serial.println("Hello!");
-
-
 }
 
 
@@ -38,7 +36,7 @@ void loop() {
   long marker = 50000; //highlight a frequency (put 0 if you don't want to use)
   double markerWidth = .1; //how fat that marker is
   
-  
+  //end of what you need to edit
   
   double expMultiplier = log(endFrequency)/sweepTime_mS;
   unsigned long timeDelayuSec = (sweepTime_mS*1000)/((double)points);//the 600 is about low long it takes to write to dds
@@ -58,9 +56,6 @@ void loop() {
       Serial.print("micros: ");
       Serial.println( micros() );
    }
-  
-   
-   
   
   ad.setfreq(15);//keep hpf biased
    
@@ -96,8 +91,6 @@ void loop() {
         digitalWrite(scaleOut,HIGH); 
      }
      
-     
-     
     
     //used to highlight your expected filter peak or -3dB poinr
     if( frequency > marker - markerWidth*marker && frequency < marker + markerWidth*marker)
@@ -107,27 +100,12 @@ void loop() {
     
 
 //end chan2 highlights
-    
-    
-    /*
-    Serial.print("expMultiplier:");
-    Serial.print( expMultiplier ,4 );
-    Serial.print("    freq:");
-    Serial.print(pow(2.71828,i*expMultiplier),4);
-    Serial.print("    i:");
-    Serial.print(i);
-    Serial.print("    delay uSec:");
-    Serial.println(timeDelayuSec);
-    delay(10);
-    */
       
     //wait until uptime has elapsed instead of using delay.
     //this somewhat compensates for any time lost mainly due to writing to the dds
     while(micros() <= previousUptime + timeDelayuSec){}
-    //delayMicroseconds(1);
-  
-    
-    
+
+ 
     previousUptime = micros();
     
     
