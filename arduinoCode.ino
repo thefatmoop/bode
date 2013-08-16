@@ -14,6 +14,7 @@ This work is licensed under a Creative Commons Attribution-NonCommercial 3.0 Uni
 AD9850 ad(7, 8, 9); // w_clk, fq_ud, d7
 int led = 13;
 int scaleOut = 5;
+
 // the setup routine runs once when you press reset:
 void setup() {                
   // initialize the digital pin as an output.
@@ -21,8 +22,6 @@ void setup() {
   pinMode(scaleOut, OUTPUT);
 
   Serial.begin(57600);
-  delay(1000);
-  Serial.println("Hello!");
 }
 
 
