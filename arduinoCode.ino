@@ -1,7 +1,11 @@
 /*
-R1
-8/16/2013
+exp scaling DDS
+8/16/2013 
+using arduino v1.0.1
+atmega328 based arduino
+
 Reibot.org for full guide 
+
 This work is licensed under a Creative Commons Attribution-NonCommercial 3.0 United States License
 */
 
