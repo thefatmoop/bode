@@ -6,7 +6,8 @@ atmega328 based arduino
 
 Reibot.org for full guide 
 
-This work is licensed under a Creative Commons Attribution-NonCommercial 3.0 United States License
+This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
+http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US
 */
 
 #include <AD9850.h>//dds sine wave generator
