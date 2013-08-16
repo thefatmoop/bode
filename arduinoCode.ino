@@ -1,3 +1,10 @@
+/*
+R1
+8/16/2013
+Reibot.org for full guide 
+This work is licensed under a Creative Commons Attribution-NonCommercial 3.0 United States License
+*/
+
 #include <AD9850.h>//dds sine wave generator
 
 AD9850 ad(7, 8, 9); // w_clk, fq_ud, d7
