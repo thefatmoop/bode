@@ -22,8 +22,6 @@ void setup() {
   Serial.begin(57600);
 }
 
-
-
 // the loop routine runs over and over again forever:
 void loop() {
   //connect pin 13 to the scope's external trigger, and trigger off it. 
@@ -46,18 +44,6 @@ void loop() {
   
   long axisLocation_mS = sweepTime_mS*log(10)/log(endFrequency); //for 100Khz pk, 10,100,1000,10k,100k occur every 50mSec
   
-  
-  //Serial.print(" micros: ");
-  //Serial.println(micros());
-  
-     //try and do some overflow handling. will sit and twiddle its thumbs for 2 secs before overflow
-   while( micros() > 4294964295){ //overflows at 4,294,967,295
-      delay(10);
-      Serial.println("waiting for overflow");
-      Serial.print("micros: ");
-      Serial.println( micros() );
-   }
-  
   ad.setfreq(15);//keep hpf biased
    
   unsigned long previousUptime = micros();
@@ -78,12 +64,9 @@ void loop() {
     ad.setfreq( frequency );
     
     
-    
 //chan2 highlights
     timeElapsed = (micros() - startTime)/1000.;
      
-     
- 
      for(int ii = 0; ii < 10; ii++){//up to 10 markers on log scale. 10magnitude capability is overkill
      
       if( timeElapsed >= ii*axisLocation_mS && timeElapsed <= ii*axisLocation_mS+axisWidth){
@@ -91,7 +74,6 @@ void loop() {
       }else
         digitalWrite(scaleOut,HIGH); 
      }
-     
     
     //used to highlight your expected filter peak or -3dB poinr
     if( frequency > marker - markerWidth*marker && frequency < marker + markerWidth*marker)
@@ -109,10 +91,6 @@ void loop() {
  
     previousUptime = micros();
     
-    
-    //if(pow(2.71828,i*expMultiplier) > endFrequency){
-    //  break;
-   // }
     
     i+= i_increment;
     
