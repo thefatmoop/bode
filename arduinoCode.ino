@@ -5,9 +5,6 @@ using arduino v1.0.1
 atmega328 based arduino
 
 Reibot.org for full guide 
-
-This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
-http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US
 */
 
 #include <AD9850.h>//dds sine wave generator
@@ -124,7 +121,7 @@ void loop() {
   
   digitalWrite(scaleOut,LOW);
   digitalWrite(led, LOW); 
-  ad.setfreq(300000);//stop generating any sines, but keep hpf biased
+  ad.setfreq(300000);//keep hpf biased
   //Serial.print("\nBREAK\n");
   delay(sweepTime_mS+100);          
 }
