@@ -90,11 +90,8 @@ void loop() {
 
  
     previousUptime = micros();
-    
-    
     i+= i_increment;
     
-   
   }
   
   digitalWrite(scaleOut,LOW);
