@@ -44,7 +44,7 @@ void loop() {
   
   long axisLocation_mS = sweepTime_mS*log(10)/log(endFrequency); //for 100Khz pk, 10,100,1000,10k,100k occur every 50mSec
   
-  ad.setfreq(15);//keep hpf biased
+  ad.setfreq(10);//keep hpf biased
    
   unsigned long previousUptime = micros();
   unsigned long startTime = micros();
@@ -58,8 +58,8 @@ void loop() {
     long frequency = pow(2.71828,i*expMultiplier);
     
     //keep generating something if it's a very low freq. this keeps hpf biased 
-    if(frequency <= 15)    
-    ad.setfreq( 15 );
+    if(frequency <= 10)    
+    ad.setfreq( 10 );
     else
     ad.setfreq( frequency );
     
